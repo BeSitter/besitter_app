@@ -1,0 +1,41 @@
+version: '3'
+services:
+  nginx:
+    restart: always
+    build:
+      dockerfile: Dockerfile.dev
+      context: ./nginx
+    ports:
+      - '3050:80'
+    depends_on:
+      - client
+      - api
+      - postgres-db
+  client:
+    build: 
+      dockerfile: Dockerfile.dev
+      context: ./client
+    volumes:
+      - /usr/src/app/node_modules
+      - /usr/src/app/dist
+      - ./client:/usr/src/app
+    env_file:
+      - ./client/.env
+  api:
+    build:
+      dockerfile: Dockerfile.dev
+      context: ./api
+    env_file:
+      - ./api/.env
+    depends_on:
+      - postgres-db
+    volumes:
+      - /usr/src/app/node_modules
+      - ./api:/usr/src/app
+  postgres-db:
+    image: postgres:latest
+    restart: always
+    env_file:
+      - ./api/.env
+    volumes:
+      - ./db_dump/pgdata:/var/lib/postgresql/data
