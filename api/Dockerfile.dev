@@ -6,4 +6,4 @@ COPY ./package.json ./
 RUN npm install
 COPY ./ ./
 
-CMD ["sh", "-c", "npm run typeorm migration:run;npm run start"]
+CMD ["sh", "-c", "npm run typeorm migration:run;npm run start:dev"]
