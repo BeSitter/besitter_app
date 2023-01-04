@@ -2,7 +2,7 @@
 	import IoMdSearch from 'svelte-icons/io/IoMdSearch.svelte';
 </script>
 
-<div class="hero min-h-[700px]" style="background-image: url(/bg_hero.jpg);">
+<div class="hero min-h-[700px]" style="background-image: url(/backgrounds/bg_hero.jpg);">
 	<div class="hero-overlay bg-opacity-60" />
 	<div class="hero-content text-center">
 		<div>

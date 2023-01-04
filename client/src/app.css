@@ -34,3 +34,9 @@ body {
 .section-divider {
 	margin-top: 4rem;
 }
+
+@layer components {
+  .btn {
+    @apply font-normal px-5 text-sm;
+  }
+}
