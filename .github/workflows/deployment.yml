@@ -16,6 +16,7 @@ jobs:
           password: ${{ secrets.SSH_PASSWORD }}
           script: |
             whomai
+            cd besitter_app
             ls -a
   # check-lint:
   #   runs-on: ubuntu-latest
