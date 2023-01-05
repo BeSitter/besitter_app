@@ -17,7 +17,7 @@ jobs:
         with:
           node-version: ${{ matrix.node-version }}
           cache: "npm"
-        run: |
+      - run: |
           cd ./api
           ls -a
           npm i
