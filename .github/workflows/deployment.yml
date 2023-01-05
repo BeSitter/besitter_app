@@ -1,0 +1,52 @@
+name: Deployment
+
+on:
+  push:
+    branches: ["main"]
+jobs:
+  update:
+    name: Source code update
+    runs-on: ubuntu-latest
+    steps:
+      - name: Pulling latest updates
+        uses: appleboy/ssh-action@v0.1.6
+        with:
+          host: ${{ secrets.SSH_HOST }}
+          username: ${{ secrets.SSH_USERNAME }}
+          password: ${{ secrets.SSH_PASSWORD }}
+          script: |
+            whomai
+            ls -a
+  # check-lint:
+  #   runs-on: ubuntu-latest
+
+  #   strategy:
+  #     matrix:
+  #       node-version: [16.x]
+
+  #   steps:
+  #     - uses: actions/checkout@v3
+  #     - name: Use Node.js ${{ matrix.node-version }}
+  #       uses: actions/setup-node@v3
+  #       with:
+  #         node-version: ${{ matrix.node-version }}
+  #         cache: "npm"
+  #     - run: npm i
+  #     - run: npm run lint
+  # # unit-test:
+
+  # #   runs-on: ubuntu-latest
+
+  # #   strategy:
+  # #     matrix:
+  # #       node-version: [16.x]
+
+  # #   steps:
+  # #   - uses: actions/checkout@v3
+  # #   - name: Use Node.js ${{ matrix.node-version }}
+  # #     uses: actions/setup-node@v3
+  # #     with:
+  # #       node-version: ${{ matrix.node-version }}
+  # #       cache: 'npm'
+  # #   - run: npm i
+  # #   - run: npm run test
