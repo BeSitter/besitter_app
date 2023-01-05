@@ -8,7 +8,7 @@
 		<div>
 			<h1 class="mb-5 text-md lg:text-3xl font-bold text-white">
 				La plateforme qui facilite la recherche d'une garde qualifiée et responsable pour vos
-				<span class="text-primary">enfants</span>
+				<span class="text-primary">enfants!</span>
 			</h1>
 			<button class="mt-4 lg:mt-10 btn btn-primary rounded-full">
 				<span class="text-xs">Inscription gratuite</span>

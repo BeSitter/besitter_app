@@ -15,39 +15,20 @@ jobs:
           username: ${{ secrets.SSH_USERNAME }}
           password: ${{ secrets.SSH_PASSWORD }}
           script: |
-            whomai
             cd besitter_app
-            ls -a
-  # check-lint:
-  #   runs-on: ubuntu-latest
-
-  #   strategy:
-  #     matrix:
-  #       node-version: [16.x]
-
-  #   steps:
-  #     - uses: actions/checkout@v3
-  #     - name: Use Node.js ${{ matrix.node-version }}
-  #       uses: actions/setup-node@v3
-  #       with:
-  #         node-version: ${{ matrix.node-version }}
-  #         cache: "npm"
-  #     - run: npm i
-  #     - run: npm run lint
-  # # unit-test:
-
-  # #   runs-on: ubuntu-latest
-
-  # #   strategy:
-  # #     matrix:
-  # #       node-version: [16.x]
-
-  # #   steps:
-  # #   - uses: actions/checkout@v3
-  # #   - name: Use Node.js ${{ matrix.node-version }}
-  # #     uses: actions/setup-node@v3
-  # #     with:
-  # #       node-version: ${{ matrix.node-version }}
-  # #       cache: 'npm'
-  # #   - run: npm i
-  # #   - run: npm run test
+            git pull origin main
+  deploy:
+    name: Deploy changes
+    runs-on: ubuntu-latest
+    steps:
+      - name: Deploying changes
+        uses: appleboy/ssh-action@v0.1.6
+        with:
+          host: ${{ secrets.SSH_HOST }}
+          username: ${{ secrets.SSH_USERNAME }}
+          password: ${{ secrets.SSH_PASSWORD }}
+          script: |
+            cd besitter_app
+            docker-compose stop
+            docker-compose down
+            docker-compose up --build -d
