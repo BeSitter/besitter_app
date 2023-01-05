@@ -11,7 +11,12 @@ async function bootstrap() {
   app.use(json({ limit: '100mb' }));
   app.use(helmet());
   app.enableCors({
-    origin: ['http://localhost:3000'],
+    origin: [
+      'http://localhost:3000',
+      'http://besitter.com',
+      'https://besitter.com',
+      'http://217.160.51.174',
+    ],
     credentials: true,
   });
   app.enableVersioning({
