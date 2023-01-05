@@ -4,8 +4,8 @@ on:
   push:
     branches: ["main"]
 jobs:
-  update:
-    name: Source code update
+  deploy:
+    name: Deploy latest changes
     runs-on: ubuntu-latest
     steps:
       - name: Pulling latest updates
@@ -17,9 +17,6 @@ jobs:
           script: |
             cd besitter_app
             git pull origin main
-  deploy:
-    name: Deploy changes
-    runs-on: ubuntu-latest
     steps:
       - name: Deploying changes
         uses: appleboy/ssh-action@v0.1.6
