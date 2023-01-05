@@ -1,0 +1,45 @@
+name: Integration
+
+on:
+  push:
+    branches: ["develop"]
+  pull_request:
+    branches: ["develop"]
+
+jobs:
+  build:
+    name: Build API and CLIENT
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Building API
+        working-directory: ./api
+        uses: actions/setup-node@v3
+        with:
+          node-version: 16.x
+          cache: "npm"
+      - run: npm i
+      - run: npm run build --if-present
+      - name: Building CLIENT
+        working-directory: ./client
+        uses: actions/setup-node@v3
+        with:
+          node-version: 19.x
+          cache: "npm"
+      - run: npm i
+      - run: npm run build --if-present
+
+  # check-lint:
+  #   runs-on: ubuntu-latest
+  #   strategy:
+  #     matrix:
+  #       node-version: [16.x]
+  #   steps:
+  #     - uses: actions/checkout@v3
+  #     - name: Use Node.js ${{ matrix.node-version }}
+  #       uses: actions/setup-node@v3
+  #       with:
+  #         node-version: ${{ matrix.node-version }}
+  #         cache: "npm"
+  #     - run: npm i
+  #     - run: npm run lint
