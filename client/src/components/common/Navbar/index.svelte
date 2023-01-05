@@ -48,7 +48,7 @@
 	<div class="flex flex-row justify-between items-center">
 		<!-- logo -->
 		<div class="tooltip tooltip-bottom tooltip-primary" data-tip="Accueil">
-			<a href="/" class="font-bold"><img src="/logo.png" alt="" class="w-24 h-fit"></a>
+			<a href="/" class="font-bold"><img src="/logo.png" alt="" class="w-24"></a>
 		</div>
 		<div class="hidden lg:flex flex-row items-center gap-14">
 			<a href="/" class="flex flex-col items-center gap-2 font-semibold {y>= 50 ? 'text-neutral' : 'text-white'}">
