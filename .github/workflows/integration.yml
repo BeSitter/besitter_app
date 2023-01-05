@@ -10,13 +10,16 @@ jobs:
   build:
     name: Build API and CLIENT
     runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [19.x]
     steps:
       - uses: actions/checkout@v3
       - name: Building API
         working-directory: ./api
         uses: actions/setup-node@v3
         with:
-          node-version: 14.x
+          node-version: ${{ matrix.node-version }}
           cache: "npm"
       - run: npm i
       - run: npm run build --if-present
