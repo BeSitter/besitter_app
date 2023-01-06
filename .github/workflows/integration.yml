@@ -12,5 +12,4 @@ jobs:
     container: node:14
     steps:
       - run: |
-          cd ./api
           ls
