@@ -5,32 +5,33 @@
 	<footer class="footer p-10 bg-base-100 text-neutral">
 		<div>
 			<span class="footer-title">BeSitter</span>
-			<a class="link link-hover">Comment ça marche</a>
-			<a class="link link-hover">Aide</a>
-			<a class="link link-hover">Tarifs</a>
-			<a class="link link-hover">À propos de nous</a>
-			<a class="link link-hover">Contact</a>
+			<a href="/" class="link link-hover">Comment ça marche</a>
+			<a href="/" class="link link-hover">Aide</a>
+			<a href="/" class="link link-hover">Tarifs</a>
+			<a href="/" class="link link-hover">À propos de nous</a>
+			<a href="/" class="link link-hover">Contact</a>
 		</div>
 		<div>
 			<span class="footer-title">Découvrir</span>
-			<a class="link link-hover">Conseils et articles</a>
-			<a class="link link-hover">Confiance & sécurité</a>
-			<a class="link link-hover">Les normes communautaires</a>
-			<a class="link link-hover">Partenaires</a>
+			<a href="/" class="link link-hover">Conseils et articles</a>
+			<a href="/" class="link link-hover">Confiance & sécurité</a>
+			<a href="/" class="link link-hover">Les normes communautaires</a>
+			<a href="/" class="link link-hover">Partenaires</a>
 		</div>
 		<div>
 			<span class="footer-title">Légal</span>
-			<a class="link link-hover">Confidentialité</a>
-			<a class="link link-hover">Conditions</a>
+			<a href="/" class="link link-hover">Confidentialité</a>
+			<a href="/" class="link link-hover">Conditions</a>
 		</div>
 		<div>
 			<span class="footer-title">Newsletter</span>
 			<div class="form-control w-80">
-				<label class="label">
+				<label class="label" for="email">
 					<span class="label-text">Enter your email address</span>
 				</label>
 				<div class="relative">
 					<input
+						id="name"
 						type="text"
 						placeholder="username@site.com"
 						class="input input-bordered w-full pr-16"

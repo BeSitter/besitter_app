@@ -14,7 +14,7 @@
 	export let sliderType = '';
 	let interval: any;
 
-	const rotateLeft = (e: any) => {
+	const rotateLeft = () => {
 		const transitioningImage = sliderItems[sliderItems.length - 1];
 		// @ts-ignore
 		document.getElementById(transitioningImage.id).style.opacity = '0';
@@ -25,7 +25,7 @@
 		// @ts-ignore
 		setTimeout(() => (document.getElementById(transitioningImage.id).style.opacity = '1'), speed);
 	};
-	const rotateRight = (e: any) => {
+	const rotateRight = () => {
 		const transitioningImage = sliderItems[0];
 		// @ts-ignore
 		document.getElementById(transitioningImage.id).style.opacity = '0';

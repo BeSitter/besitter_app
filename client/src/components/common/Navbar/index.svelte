@@ -33,7 +33,7 @@
 			<a href="/auth/signup" class="font-bold hover:text-primary">S'inscrire</a>
 		</div>
 		<div>
-			<a href="" class="font-bold hover:text-primary">Se connecter</a>
+			<a href="/" class="font-bold hover:text-primary">Se connecter</a>
 		</div>
 	</div>
 </Drawer>
