@@ -25,7 +25,7 @@ jobs:
       - run: cd ./api && npm i && npm run build
   checklint-client:
     runs-on: ubuntu-latest
-    container: node:14
+    container: node:19
     steps:
       - run: node --version
       - run: npm --version
@@ -33,7 +33,7 @@ jobs:
       - run: cd ./client && npm i && npm run lint
   build-client:
     runs-on: ubuntu-latest
-    container: node:14
+    container: node:19
     steps:
       - run: node --version
       - run: npm --version
