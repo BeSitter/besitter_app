@@ -14,4 +14,6 @@ jobs:
       - run: node --version
       - run: npm --version
       - uses: actions/checkout@v3
-      - run: ls
+      - run: cd ./api
+      - run: npm i
+      - run: npm run build
