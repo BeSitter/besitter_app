@@ -19,7 +19,7 @@
 		class="bg-white h-24 w-full lg:w-3/6 self-end lg:rounded-t-full flex flex-row items-center justify-center py-4 px-2 lg:py-10 lg:px-20"
 	>
 		<div class="w-full">
-			<label for="" class="font-bold text-xs ml-5">Trouver votre prochain Sitter</label>
+			<label for="" class="font-bold text-xs ml-5">Trouvez votre prochain Sitter</label>
 			<input
 				type="text"
 				placeholder="Ville ou Code postal..."

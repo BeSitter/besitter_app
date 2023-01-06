@@ -1,4 +1,3 @@
-// @ts-nocheck
 import { API_URL } from '../config/env';
 import axios, { type AxiosInstance } from 'axios';
 
