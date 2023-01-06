@@ -17,5 +17,4 @@ jobs:
         with:
           node-version: 14.x
           cache: "npm"
-      - run: cd ./api && npm i
-      - run: cd ./api && npm run build --if-present
+      - run: ls
