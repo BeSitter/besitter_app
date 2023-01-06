@@ -7,6 +7,14 @@ on:
     branches: ["develop"]
 
 jobs:
+  checklint-api:
+    runs-on: ubuntu-latest
+    container: node:14
+    steps:
+      - run: node --version
+      - run: npm --version
+      - uses: actions/checkout@v3
+      - run: cd ./api && npm i && npm run lint
   build-api:
     runs-on: ubuntu-latest
     container: node:14
@@ -15,3 +23,19 @@ jobs:
       - run: npm --version
       - uses: actions/checkout@v3
       - run: cd ./api && npm i && npm run build
+  checklint-client:
+    runs-on: ubuntu-latest
+    container: node:14
+    steps:
+      - run: node --version
+      - run: npm --version
+      - uses: actions/checkout@v3
+      - run: cd ./client && npm i && npm run lint
+  build-client:
+    runs-on: ubuntu-latest
+    container: node:14
+    steps:
+      - run: node --version
+      - run: npm --version
+      - uses: actions/checkout@v3
+      - run: cd ./client && npm i && npm run build
