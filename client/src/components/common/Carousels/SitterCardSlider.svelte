@@ -1,52 +1,52 @@
 <script lang="ts">
-	import { flip } from 'svelte/animate'
-	import { onDestroy } from 'svelte'
+	import { flip } from 'svelte/animate';
+	import { onDestroy } from 'svelte';
 	import SitterCard from '../Cards/SitterCard.svelte';
-	export let sliderItems: any[] = []
+	export let sliderItems: any[] = [];
 	// export let itemWidth = 300
 	// export let itemSpacing = 20
-	export let speed = 500
+	export let speed = 500;
 	// export let controlColor = '#444'
 	// export let controlScale = '0.5'
-	export let autoplay = false
-	export let autoplaySpeed = 5000
-	export let displayControls = true
-	export let sliderType = ''
-	let interval: any
+	export let autoplay = false;
+	export let autoplaySpeed = 5000;
+	export let displayControls = true;
+	export let sliderType = '';
+	let interval: any;
 
-	const rotateLeft = (e: any) => {
-		const transitioningImage = sliderItems[sliderItems.length - 1]
+	const rotateLeft = () => {
+		const transitioningImage = sliderItems[sliderItems.length - 1];
 		// @ts-ignore
-		document.getElementById(transitioningImage.id).style.opacity = '0'
+		document.getElementById(transitioningImage.id).style.opacity = '0';
 		sliderItems = [
 			sliderItems[sliderItems.length - 1],
 			...sliderItems.slice(0, sliderItems.length - 1)
-		]
+		];
 		// @ts-ignore
-		setTimeout(() => (document.getElementById(transitioningImage.id).style.opacity = '1'), speed)
-	}
-	const rotateRight = (e: any) => {
-		const transitioningImage = sliderItems[0]
+		setTimeout(() => (document.getElementById(transitioningImage.id).style.opacity = '1'), speed);
+	};
+	const rotateRight = () => {
+		const transitioningImage = sliderItems[0];
 		// @ts-ignore
-		document.getElementById(transitioningImage.id).style.opacity = '0'
-		sliderItems = [...sliderItems.slice(1, sliderItems.length), sliderItems[0]]
+		document.getElementById(transitioningImage.id).style.opacity = '0';
+		sliderItems = [...sliderItems.slice(1, sliderItems.length), sliderItems[0]];
 		// @ts-ignore
-		setTimeout(() => (document.getElementById(transitioningImage.id).style.opacity = '1'), speed)
-	}
+		setTimeout(() => (document.getElementById(transitioningImage.id).style.opacity = '1'), speed);
+	};
 	const startAutoPlay = () => {
 		if (autoplay) {
-			interval = setInterval(rotateLeft, autoplaySpeed)
+			interval = setInterval(rotateLeft, autoplaySpeed);
 		}
-	}
+	};
 	const stopAutoPlay = () => {
-		clearInterval(interval)
-	}
+		clearInterval(interval);
+	};
 	if (autoplay) {
-		startAutoPlay()
+		startAutoPlay();
 	}
 	onDestroy(() => {
-		stopAutoPlay()
-	})
+		stopAutoPlay();
+	});
 </script>
 
 <div id="slider-container">

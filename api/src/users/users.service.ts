@@ -42,7 +42,11 @@ export class UsersService {
         subject: 'BeSitter | Veuillez vérifier votre adresse e-mail',
         template: 'email-verification',
         context: {
-          redirectionUrl: `${process.env.NODE_ENV === 'development' ? process.env.LOCAL_WEBSITE_URL : process.env.DEPLOYED_WEBSITE_URL}/register/complete?token=${token}`,
+          redirectionUrl: `${
+            process.env.NODE_ENV === 'development'
+              ? process.env.LOCAL_WEBSITE_URL
+              : process.env.DEPLOYED_WEBSITE_URL
+          }/register/complete?token=${token}`,
         },
       })
       .then(() => {

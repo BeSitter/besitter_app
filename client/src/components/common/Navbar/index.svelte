@@ -33,7 +33,7 @@
 			<a href="/auth/signup" class="font-bold hover:text-primary">S'inscrire</a>
 		</div>
 		<div>
-			<a href="" class="font-bold hover:text-primary">Se connecter</a>
+			<a href="/" class="font-bold hover:text-primary">Se connecter</a>
 		</div>
 	</div>
 </Drawer>
@@ -48,27 +48,41 @@
 	<div class="flex flex-row justify-between items-center">
 		<!-- logo -->
 		<div class="tooltip tooltip-bottom tooltip-primary" data-tip="Accueil">
-			<a href="/" class="font-bold"><img src="/logo.png" alt="" class="w-24"></a>
+			<a href="/" class="font-bold"><img src="/logo.png" alt="" class="w-24" /></a>
 		</div>
 		<div class="hidden lg:flex flex-row items-center gap-14">
-			<a href="/" class="flex flex-col items-center gap-2 font-semibold {y>= 50 ? 'text-neutral' : 'text-white'}">
+			<a
+				href="/"
+				class="flex flex-col items-center gap-2 font-semibold {y >= 50
+					? 'text-neutral'
+					: 'text-white'}"
+			>
 				<span>Pour vos enfants</span>
 				<span class="w-24 h-[2px] {y >= 50 ? 'bg-neutral' : 'bg-white'}" />
 			</a>
-			<a href="/" class="flex flex-col items-center gap-2 font-semibold {y>= 50 ? 'text-neutral' : 'text-white'}">
+			<a
+				href="/"
+				class="flex flex-col items-center gap-2 font-semibold {y >= 50
+					? 'text-neutral'
+					: 'text-white'}"
+			>
 				<span>Pour vos parents</span>
 			</a>
 		</div>
 		<div class="flex flex-row justify-center items-center gap-4">
 			<button
-				class="w-8 h-8 tooltip tooltip-bottom tooltip-primary {y >= 50 ? "text-neutral" : "text-white"}"
+				class="w-8 h-8 tooltip tooltip-bottom tooltip-primary {y >= 50
+					? 'text-neutral'
+					: 'text-white'}"
 				data-tip="Mes favoris"
 			>
 				<IoMdHeartEmpty />
 			</button>
 			<div>
 				<button
-					class="btn btn-md rounded-full bg-base-100 hover:bg-gray-300 text-neutral {y >= 50 ? 'border-neutral' : 'border-none'}"
+					class="btn btn-md rounded-full bg-base-100 hover:bg-gray-300 text-neutral {y >= 50
+						? 'border-neutral'
+						: 'border-none'}"
 					on:click={() => (isMenuOpened = true)}
 				>
 					<div class="flex flex-row justify-between items-center gap-2">
