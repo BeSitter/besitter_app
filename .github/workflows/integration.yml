@@ -11,5 +11,4 @@ jobs:
     runs-on: ubuntu-latest
     container: node:14
     steps:
-      - run: |
-          ls
+      - run: cd ./api && ls
