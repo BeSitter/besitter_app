@@ -7,14 +7,11 @@ on:
     branches: ["develop"]
 
 jobs:
-  build:
+  build-api:
     runs-on: ubuntu-latest
-
+    container: node:14
     steps:
+      - run: node --version
+      - run: npm --version
       - uses: actions/checkout@v3
-      - name: Building API
-        uses: actions/setup-node@v3
-        with:
-          node-version: 14.x
-          cache: "npm"
       - run: ls
