@@ -10,6 +10,9 @@ class Api {
 	async sendVerificationEmail(email: string) {
 		return this.httpClient.post('/users/send-verification-email', { email });
 	}
+	async verifyToken(token: string) {
+		return this.httpClient.post('/users/verify-token', { token });
+	}
 }
 
 export const api = new Api();

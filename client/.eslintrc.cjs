@@ -6,7 +6,8 @@ module.exports = {
 	ignorePatterns: ['*.cjs'],
 	overrides: [{ files: ['*.svelte'], processor: 'svelte3/svelte3' }],
 	rules: {
-		'@typescript-eslint/ban-ts-comment': 'off'
+		'@typescript-eslint/ban-ts-comment': 'off',
+		'no-useless-escape': 'off'
 	},
 	settings: {
 		'svelte3/typescript': () => require('typescript')

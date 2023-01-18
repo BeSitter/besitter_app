@@ -38,8 +38,10 @@
 	},
 	"type": "module",
 	"dependencies": {
+		"@zerodevx/svelte-toast": "^0.8.0",
 		"axios": "^1.2.1",
 		"daisyui": "^2.46.0",
+		"jwt-decode": "^3.1.2",
 		"svelte-drawer-component": "^1.2.2",
 		"svelte-icons": "^2.1.0"
 	}
