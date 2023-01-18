@@ -46,7 +46,7 @@ export class UsersService {
             process.env.NODE_ENV === 'development'
               ? process.env.LOCAL_WEBSITE_URL
               : process.env.DEPLOYED_WEBSITE_URL
-          }/register/complete?token=${token}`,
+          }/auth/register/complete?token=${token}`,
         },
       })
       .then(() => {
@@ -81,6 +81,15 @@ export class UsersService {
       .catch(() => {
         throw new BadRequestException('Failed to send password reset email');
       });
+  }
+
+  async verifyToken(token: string): Promise<string> {
+    try {
+      const decodedToken = this.jwtService.verify(token);
+      return decodedToken;
+    } catch (err) {
+      throw new BadRequestException('Invalid token');
+    }
   }
 
   async register(data: Partial<CreateUserDto>): Promise<any> {

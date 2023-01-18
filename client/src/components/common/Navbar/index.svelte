@@ -30,7 +30,7 @@
 	</div>
 	<div class="h-full flex flex-col items-center justify-center gap-2">
 		<div>
-			<a href="/auth/signup" class="font-bold hover:text-primary">S'inscrire</a>
+			<a href="/auth/register" class="font-bold hover:text-primary">S'inscrire</a>
 		</div>
 		<div>
 			<a href="/" class="font-bold hover:text-primary">Se connecter</a>
@@ -41,7 +41,7 @@
 	id="navbar"
 	class="flex flex-col justify-center w-full top-0 z-50 px-4 lg:px-8 {y >= 50
 		? 'shadow-lg bg-base-100'
-		: `${sticky ? 'bg-primary' : ''}`}"
+		: `${sticky ? 'bg-base-100 shadow-lg' : ''}`}"
 	class:sticky
 	class:fixed={!sticky}
 >
@@ -53,16 +53,16 @@
 		<div class="hidden lg:flex flex-row items-center gap-14">
 			<a
 				href="/"
-				class="flex flex-col items-center gap-2 font-semibold {y >= 50
+				class="flex flex-col items-center gap-2 font-semibold {y >= 50 || sticky
 					? 'text-neutral'
 					: 'text-white'}"
 			>
 				<span>Pour vos enfants</span>
-				<span class="w-24 h-[2px] {y >= 50 ? 'bg-neutral' : 'bg-white'}" />
+				<span class="w-24 h-[2px] {y >= 50 || sticky ? 'bg-neutral' : 'bg-white'}" />
 			</a>
 			<a
 				href="/"
-				class="flex flex-col items-center gap-2 font-semibold {y >= 50
+				class="flex flex-col items-center gap-2 font-semibold {y >= 50 || sticky
 					? 'text-neutral'
 					: 'text-white'}"
 			>
@@ -71,7 +71,7 @@
 		</div>
 		<div class="flex flex-row justify-center items-center gap-4">
 			<button
-				class="w-8 h-8 tooltip tooltip-bottom tooltip-primary {y >= 50
+				class="w-8 h-8 tooltip tooltip-bottom tooltip-primary {y >= 50 || sticky
 					? 'text-neutral'
 					: 'text-white'}"
 				data-tip="Mes favoris"
@@ -80,7 +80,8 @@
 			</button>
 			<div>
 				<button
-					class="btn btn-md rounded-full bg-base-100 hover:bg-gray-300 text-neutral {y >= 50
+					class="btn btn-md rounded-full bg-base-100 hover:bg-gray-300 text-neutral {y >= 50 ||
+					sticky
 						? 'border-neutral'
 						: 'border-none'}"
 					on:click={() => (isMenuOpened = true)}
