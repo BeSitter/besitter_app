@@ -29,6 +29,7 @@ import { EmailVerificationDto } from './dtos/email-verification.dto';
 import { PasswordResetDto } from './dtos/password-reset.dto';
 import { UserCredentialsDto } from './dtos/user-credentials.dto';
 import { UserDto } from './dtos/user.dto';
+import { VerifyTokenDto } from './dtos/verify-token.dto';
 import { User } from './entities/user.entity';
 import { UsersService } from './users.service';
 
@@ -93,6 +94,35 @@ export class UsersController {
           default:
             throw new InternalServerErrorException(
               'Something went wrong while sending password reset email',
+            );
+        }
+      });
+  }
+
+  @Post('/verify-token')
+  @HttpCode(200)
+  @ApiOkResponse({
+    description: 'Token verified successfully',
+  })
+  @ApiBadRequestResponse({
+    description: 'Invalid token',
+  })
+  @ApiInternalServerErrorResponse({
+    description: 'Something went wrong while verifying token',
+  })
+  async verifyToken(@Body() body: VerifyTokenDto) {
+    return this.userService
+      .verifyToken(body.token)
+      .then((res) => {
+        return res;
+      })
+      .catch((err) => {
+        switch (err.response?.statusCode) {
+          case 400:
+            throw new BadRequestException('Invalid token');
+          default:
+            throw new InternalServerErrorException(
+              'Something went wrong while verifying token',
             );
         }
       });
