@@ -80,7 +80,8 @@
 			</button>
 			<div>
 				<button
-					class="btn btn-md rounded-full bg-base-100 hover:bg-gray-300 text-neutral {y >= 50 || sticky
+					class="btn btn-md rounded-full bg-base-100 hover:bg-gray-300 text-neutral {y >= 50 ||
+					sticky
 						? 'border-neutral'
 						: 'border-none'}"
 					on:click={() => (isMenuOpened = true)}
